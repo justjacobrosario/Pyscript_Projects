@@ -1,14 +1,15 @@
+<!DOCTYPE html>
 <html>
 <head>
-	<meta charset = "utf-8">
-	<link rel = "stylesheet" href = "https://pyscript.net/releases/2026.3.1/core.css">
-	<script type = "module" src = "https://pyscript.net/releases/2026.3.1/core.js"></script>
+    <meta charset = "utf-8">
+    <link rel = "stylesheet" href = "https://pyscript.net/releases/2026.1.1/core.css">
+    <script type = "module" src = "https://pyscript.net/releases/2026.1.1/core.js"></script>
 </head>
 
 <body style = "background-color: #181915; font-family: monospace; color: #F92472; overflow-y: hidden;">
-	<div id = "wrapper"></div>
-	<script id="data-json" type="application/json">
-		[
+    <div id = "wrapper"></div>
+    <script id="data-json" type="application/json">
+        [
     "I love you not only for what you are, but for what I am when I am with you.",
     "I would rather share one lifetime with you than face all the ages of this world alone.",
     "You are my heart, my life, my one and only thought.",
@@ -85,8 +86,8 @@
     "I'm in love with you, and I know that love is just a shout into the void, and that oblivion is inevitable.",
     "I will stop loving you when an apple falls from an orange tree, on the 30th of February"
 ]
-	</script>
-	<py-script>
+    </script>
+    <py-script>
 from pyscript import web, document
 import json
 import random
@@ -102,10 +103,10 @@ root.style.gap = "20px"
 
 
 def get_response(ev):
-	raw = document.getElementById("data-json").textContent
-	data = json.loads(raw)
-	rand_id = random.randint(0, 74)
-	text.innerHTML = data[rand_id]
+    raw = document.getElementById("data-json").textContent
+    data = json.loads(raw)
+    rand_id = random.randint(0, 74)
+    text.innerHTML = data[rand_id]
 
 text = document.createElement("div")
 text.innerText = "Click the button :))"
@@ -124,6 +125,6 @@ btn.addEventListener("click", web.create_proxy(get_response))
 
 root.appendChild(text)
 root.appendChild(btn)
-	</py-script>
+    </py-script>
 </body>
 </html>
